@@ -14,7 +14,7 @@ public class StockController {
 
     @GetMapping("/stock/{symbol}")
     public String getStock(@PathVariable String symbol){
-        System.out.println(key);
+        System.out.println("prices=token?"+key);
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.getForEntity(
                 "https://api.tiingo.com/tiingo/daily/"+symbol+"/prices?token="+key,String.class,
