@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @Slf4j
 public class StockController {
-    String key = System.getProperty("STOCKKEY");
+    String key = System.getenv("STOCKKEY");
 
     @GetMapping("/stock/{symbol}")
     public String getStock(@PathVariable String symbol){
